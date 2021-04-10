@@ -57,17 +57,20 @@ const Map = () => {
 
     const findLocationSuccess = (position) => {
         const { latitude, longitude } = position.coords;
-        console.log(latitude);
-        console.log(longitude);
         setCenter({
             lat: latitude,
             lng: longitude,
         });
-        console.log(center.lat);
-        console.log(center.lng);
     };
 
-    useEffect(() => locate(), [])
+    useEffect(
+        () => {
+            const name = async() => {
+                await locate()
+            }
+            name();
+        }
+        );
 
     const [viewport, setViewport] = useState({
         width: "100vw",
