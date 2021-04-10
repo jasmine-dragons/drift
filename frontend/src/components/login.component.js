@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../common.css";
 
 const LandingPage = (props) => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div className="container">
@@ -14,14 +14,14 @@ const LandingPage = (props) => {
       />
       <img className="main-logo" src="driftlogo.svg" alt="drift-logo" />
       <input
-        className="login-email"
+        className="login-input login-email"
         type="text"
         value={email}
         placeholder="email"
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
-        className="login-password"
+        className="login-input login-password"
         type="password"
         value={password}
         placeholder="password"
