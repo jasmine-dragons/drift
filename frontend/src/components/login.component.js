@@ -27,9 +27,11 @@ const LandingPage = (props) => {
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="login-button" onClick={props.updatePage}>
-        log in
-      </button>
+      <div className="main-buttons">
+        <button className="login-button" onClick={props.updatePage}>
+          log in
+        </button>
+      </div>
     </div>
   );
 };
