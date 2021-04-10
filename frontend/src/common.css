@@ -163,6 +163,9 @@ button {
 }
 
 .find-friends-text {
+  position: absolute;
+  top: 237px;
+  left: 90px;
   font-family: Open Sans;
   font-style: italic;
   font-weight: 800;

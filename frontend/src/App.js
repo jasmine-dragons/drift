@@ -25,7 +25,10 @@ const App = () => {
     <>
       {page !== 0 ? (
         <div onClick={() => pageUpdate(page - 1)}>
+
+          
           <img className="back-arrow" src="buttons/back.png" alt="arrow" />
+
         </div>
       ) : (
         ""
