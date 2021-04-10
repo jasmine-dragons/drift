@@ -10,13 +10,15 @@ const LandingPage = (props) => {
         alt="background"
       />
       <img className="main-logo" src="driftlogo.svg" alt="drift-logo" />
-      <p className="main-start-adventure-text">your next adventure awaits</p>
-      <button className="main-login-button" onClick={props.updatePage}>
-        sign up
-      </button>
-      <button className="main-login-button-2" onClick={props.updatePage}>
-        login
-      </button>
+      <div className="main-buttons">
+        <p className="main-start-adventure-text">your next adventure awaits</p>
+        <button className="main-login-button" onClick={props.updatePage}>
+          sign up
+        </button>
+        <button className="main-login-button-2" onClick={props.updatePage}>
+          login
+        </button>
+      </div>
     </div>
   );
 };

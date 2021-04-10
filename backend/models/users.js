@@ -15,23 +15,19 @@ const userTemplate = new mongoose.Schema({
     },
     friends: {
         type: Array,
-        required: true
+        default: []
     },
     points: {
         type: Number,
-        required: true
+        default: 0
     },
     driftStarted: {
         type: Boolean,
-        required: true
-    },
-    currentStage: {
-        type: Number,
-        required: true
+        default: false
     },
     currentDrift: {
         type: Array,
-        required: true
+        default: []
     }
 })
 
