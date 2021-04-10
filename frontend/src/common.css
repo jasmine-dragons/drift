@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27');
+
+button {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+
+  color: #0000000;
+  cursor: pointer;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-logo {
+  position: absolute;
+  width: 380px;
+  height: 230px;
+  left: 17px;
+  top: 143px;
+}
+
+.main-start-adventure-text {
+  position: absolute;
+  width: 352px;
+  height: 50px;
+  left: 31px;
+  top: 550px;
+
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+
+  color: #FFFFFF;
+}
+
+.main-login-button {
+  position: absolute;
+  width: 332px;
+  height: 83px;
+  left: 41px;
+  top: 605px;
+  margin-top: 6%;
+
+  background: #89C1D2;
+  border: transparent;
+  border-radius: 50px;
+
+}
+
+.main-login-button-2 {
+  position: absolute;
+  width: 332px;
+  height: 83px;
+  left: 41px;
+  top: 711px;
+  margin-top: 5%;
+
+  background: #89C1D2;
+  border: transparent;
+  border-radius: 50px;
+}
