@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27");
 
-input {
-  font-family: Open Sans;
-  font-style: italic;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 33px;
-  text-align: center;
-  letter-spacing: -0.05em;
-  color: black;
-}
-
 button {
   font-family: Open Sans;
   font-style: italic;
@@ -109,30 +98,51 @@ button {
   cursor: pointer;
 }
 
-.login-email {
+.login-input {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: black;
   position: absolute;
   width: 332px;
   height: 63px;
   left: 41px;
-  top: 525px;
-  margin-top: 10%;
-
   background: #89c1d2;
   border: transparent;
+  outline: none;
   border-radius: 50px;
+}
+.find-friends-input {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: black;
+  position: absolute;
+  width: 332px;
+  height: 63px;
+  background: #89c1d2;
+  border: transparent;
+  outline: none;
+  border-radius: 50px;
+  top: 380px;
+  left: 50px;
+}
+.login-input {
+  top: 525px;
+  margin-top: 10%;
 }
 
 .login-password {
-  position: absolute;
-  width: 332px;
-  height: 63px;
-  left: 41px;
   top: 631px;
   margin-top: 3%;
-
-  background: #89c1d2;
-  border: transparent;
-  border-radius: 50px;
 }
 
 .login-button {
