@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27");
 
+input {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: black;
+}
+
 button {
   font-family: Open Sans;
   font-style: italic;
@@ -74,7 +85,46 @@ button {
   position: absolute;
   height: 50px;
   width: 50px;
-  z-index: 1;
+  margin-left: 2%;
+}
+
+.login-email {
+  position: absolute;
+  width: 332px;
+  height: 63px;
+  left: 41px;
+  top: 525px;
+  margin-top: 10%;
+
+  background: #89c1d2;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.login-password {
+  position: absolute;
+  width: 332px;
+  height: 63px;
+  left: 41px;
+  top: 631px;
+  margin-top: 3%;
+
+  background: #89c1d2;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.login-button {
+  position: absolute;
+  width: 332px;
+  height: 83px;
+  left: 41px;
+  top: 720px;
+  margin-top: 3%;
+
+  background: #FFC65C;
+  border: transparent;
+  border-radius: 50px;
 }
 
 .search-button {
