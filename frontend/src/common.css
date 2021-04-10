@@ -24,6 +24,14 @@ button {
   cursor: pointer;
 }
 
+.main-buttons {
+  transition: transform 350ms ease-in-out, opacity 400ms;
+}
+
+.main-buttons:hover {
+  opacity: 0 !important;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -51,9 +59,12 @@ button {
   line-height: 33px;
   text-align: center;
   letter-spacing: -0.05em;
-
   color: #ffffff;
+
+  animation: blinker 1s ease-in-out infinite alternate;
 }
+
+@keyframes blinker { to { opacity: 0.25; } }
 
 .main-login-button {
   position: absolute;
