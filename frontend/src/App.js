@@ -3,8 +3,6 @@ import { useState } from "react";
 import "./App.css";
 import Map from "./components/map.component";
 import LandingPage from "./components/landingPage.component";
-
-import { useState } from "react";
 import FindFriends from "./components/findFriends.component";
 
 import Login from "./components/login.component";
@@ -27,9 +25,9 @@ const App = () => {
     //onClick={props.updatePage}
     <>
 
-      <button onClick={() => pageUpdate(page - 1)}>
+      <div onClick={() => pageUpdate(page - 1)}>
         <img className="back-arrow" src="/arrow.svg" alt="arrow" />
-      </button>
+      </div>
       {pages[page]}
 
     </>
