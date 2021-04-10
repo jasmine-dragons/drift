@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27");
+
+input {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: black;
+}
 
 button {
   font-family: Open Sans;
@@ -9,8 +20,16 @@ button {
   text-align: center;
   letter-spacing: -0.05em;
 
-  color: #0000000;
+  color: #000000;
   cursor: pointer;
+}
+
+.main-buttons {
+  transition: transform 350ms ease-in-out, opacity 400ms;
+}
+
+.main-buttons:hover {
+  opacity: 0 !important;
 }
 
 .container {
@@ -40,9 +59,12 @@ button {
   line-height: 33px;
   text-align: center;
   letter-spacing: -0.05em;
+  color: #ffffff;
 
-  color: #FFFFFF;
+  animation: blinker 1s ease-in-out infinite alternate;
 }
+
+@keyframes blinker { to { opacity: 0.25; } }
 
 .main-login-button {
   position: absolute;
@@ -52,10 +74,9 @@ button {
   top: 605px;
   margin-top: 6%;
 
-  background: #89C1D2;
+  background: #89c1d2;
   border: transparent;
   border-radius: 50px;
-
 }
 
 .main-login-button-2 {
@@ -66,7 +87,78 @@ button {
   top: 711px;
   margin-top: 5%;
 
-  background: #89C1D2;
+  background: #89c1d2;
   border: transparent;
   border-radius: 50px;
+}
+
+.back-arrow {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  margin-left: 2%;
+}
+
+.login-email {
+  position: absolute;
+  width: 332px;
+  height: 63px;
+  left: 41px;
+  top: 525px;
+  margin-top: 10%;
+
+  background: #89c1d2;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.login-password {
+  position: absolute;
+  width: 332px;
+  height: 63px;
+  left: 41px;
+  top: 631px;
+  margin-top: 3%;
+
+  background: #89c1d2;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.login-button {
+  position: absolute;
+  width: 332px;
+  height: 83px;
+  left: 41px;
+  top: 720px;
+  margin-top: 3%;
+
+  background: #FFC65C;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.search-button {
+  position: absolute;
+  width: 159px;
+  height: 58px;
+  left: 123px;
+  top: 449px;
+  margin-top: 6%;
+  color: white;
+  font-size: 28px;
+  background: #107e7b;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.find-friends-text {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffc65c;
 }
