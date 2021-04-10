@@ -1,40 +1,100 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMapGL, { GeolocateControl } from 'react-map-gl'; 
-import { navigator } from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Map = (props) => {
+// const getLocation = async () => {
+//     if ("geolocation" in navigator) {
+//         console.log("Available");
+//       } else {
+//         console.log("Not Available");
+//       }
+    
+//     const position = {
+//         latitude: 0,
+//         longitude: 0,
+//     }
+    
+//     await navigator.geolocation.getCurrentPosition((userPosition) => {
+//         // position.latitude = userPosition.coords.latitude;
+//         // position.longitude = userPosition.coords.longitude;
+//         position['latitude'] = 6;
+//         position['longitude'] = 9;
+//         console.log('inside navigator');
+//         console.log(position);
+//     });
 
-    const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.MAPBOX_TOKEN; 
-    const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep"; 
 
-    console.log(navigator);
-    const position = navigator.getPosition();
-    const latitude = position.latitude;
-    const longitude = position.longitude; 
+//     console.log(position.latitude);
+//     console.log(position.longitude);
+//       return position;
+// }
+
+
+const Map = () => {
+
+    const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; 
+    const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep";
+
+    const [ center, setCenter ] = useState({
+        lat: 0,
+        lng: 0,
+    })
+
+    const locate = () => {
+        // Get browser lat and lng for current user
+        if (!navigator.geolocation) {
+            alert('Geolocation is not supported by your browser');
+        } 
+        else {
+            navigator.geolocation.getCurrentPosition((position) => findLocationSuccess(position), (error) => findLocationFail(error));
+        }
+    };
+
+    const findLocationFail = (error) => {
+        alert(error + ' Unable to retrieve your location');
+    };
+
+    const findLocationSuccess = (position) => {
+        const { latitude, longitude } = position.coords;
+        console.log(latitude);
+        console.log(longitude);
+        setCenter({
+            lat: latitude,
+            lng: longitude,
+        });
+        console.log(center.lat);
+        console.log(center.lng);
+    };
+
+    useEffect(() => locate(), [])
 
     const [viewport, setViewport] = useState({
         width: "100vw",
         height: "100vh",
-        latitude: latitude,
-        longitude: longitude,
+        latitude: center.lat,
+        longitude: center.lng,
         zoom: 1.84
-      });
+    });
+
+    console.log("viewport")
+    console.log(viewport); 
 
     return(
         <div>
            <ReactMapGL
             {...viewport}
-            onViewportChange={nextViewport => setViewport(nextViewport)}
+            onViewportChange={setViewport}
             mapboxApiAccessToken={MAPBOX_TOKEN}
             mapStyle={style}
+            
             >
-                <GeolocateControl
+                {/* <GeolocateControl
                 // trackUserLocation={true}
                 positionOptions={{enableHighAccuracy: true}}
                 showUserLocation={true}
                 showAccuracyCircle={false}
-                />
+                /> */}
             </ReactMapGL>
         </div>
     )
