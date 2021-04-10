@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 import "./App.css";
 import Map from "./components/map.component";
 import LandingPage from "./components/landingPage.component";
-import { useState } from "react";
+import Login from "./components/login.component";
 
 const App = () => {
   const [page, pageUpdate] = useState(0);
@@ -14,14 +16,15 @@ const App = () => {
     //onClick={props.updatePage}
     <>
       {page !== 0 ? (
-        <button onClick={() => pageUpdate(page - 1)}>
+        <div onClick={() => pageUpdate(page - 1)}>
           <img className="back-arrow" src="/arrow.svg" alt="arrow" />
-        </button>
+        </div>
       ) : (
         ""
       )}
       {page === 0 ? <LandingPage updatePage={nextPage} /> : ""}
-      {page === 1 ? <Map /> : ""}
+      {page === 1 ? <Login /> : ""}
+      {page === 2 ? <Map /> : ""}
     </>
   );
 };
