@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap%27");
 
 button {
   font-family: Open Sans;
@@ -9,7 +9,7 @@ button {
   text-align: center;
   letter-spacing: -0.05em;
 
-  color: #0000000;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -41,7 +41,7 @@ button {
   text-align: center;
   letter-spacing: -0.05em;
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .main-login-button {
@@ -52,10 +52,9 @@ button {
   top: 605px;
   margin-top: 6%;
 
-  background: #89C1D2;
+  background: #89c1d2;
   border: transparent;
   border-radius: 50px;
-
 }
 
 .main-login-button-2 {
@@ -66,7 +65,14 @@ button {
   top: 711px;
   margin-top: 5%;
 
-  background: #89C1D2;
+  background: #89c1d2;
   border: transparent;
   border-radius: 50px;
+}
+
+.back-arrow {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
 }
