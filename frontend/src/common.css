@@ -76,3 +76,28 @@ button {
   width: 50px;
   z-index: 1;
 }
+
+.search-button {
+  position: absolute;
+  width: 159px;
+  height: 58px;
+  left: 123px;
+  top: 449px;
+  margin-top: 6%;
+  color: white;
+  font-size: 28px;
+  background: #107e7b;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.find-friends-text {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffc65c;
+}
