@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { GeolocateControl } from 'react-map-gl'; 
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Marker from './marker.component';
 
 // const getLocation = async () => {
 //     if ("geolocation" in navigator) {
