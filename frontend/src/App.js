@@ -26,7 +26,7 @@ const App = () => {
     <>
 
       <div onClick={() => pageUpdate(page - 1)}>
-        <img className="back-arrow" src="/arrow.svg" alt="arrow" />
+        <img className="back-arrow" src="buttons/back.png" alt="arrow" />
       </div>
       {pages[page]}
 

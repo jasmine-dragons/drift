@@ -96,7 +96,8 @@ button {
   position: absolute;
   height: 50px;
   width: 50px;
-  margin-left: 2%;
+  margin-left: 1%;
+  margin-top: 4%;
 }
 
 .login-email {
