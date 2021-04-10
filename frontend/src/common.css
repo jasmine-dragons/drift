@@ -27,10 +27,13 @@ button {
 .main-buttons {
   transition: transform 350ms ease-in-out, opacity 400ms;
 }
-
-.main-buttons:hover {
-  opacity: 0 !important;
+.main-buttons :hover {
+  opacity: 0.7 !important;
 }
+/*
+.main-login-button :hover {
+  opacity: 0.7 !important;
+}*/
 
 .container {
   height: 100vh;
@@ -64,7 +67,11 @@ button {
   animation: blinker 1s ease-in-out infinite alternate;
 }
 
-@keyframes blinker { to { opacity: 0.25; } }
+@keyframes blinker {
+  to {
+    opacity: 0.25;
+  }
+}
 
 .main-login-button {
   position: absolute;
@@ -98,6 +105,8 @@ button {
   width: 50px;
   margin-left: 1%;
   margin-top: 4%;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .login-email {
@@ -134,7 +143,7 @@ button {
   top: 720px;
   margin-top: 3%;
 
-  background: #FFC65C;
+  background: #ffc65c;
   border: transparent;
   border-radius: 50px;
 }

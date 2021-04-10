@@ -7,7 +7,6 @@ import FindFriends from "./components/findFriends.component";
 
 import Login from "./components/login.component";
 
-
 const App = () => {
   const [page, pageUpdate] = useState(0);
   const nextPage = () => {
@@ -24,12 +23,14 @@ const App = () => {
     //in the new page, add a this on the onSubmit button
     //onClick={props.updatePage}
     <>
-
-      <div onClick={() => pageUpdate(page - 1)}>
-        <img className="back-arrow" src="buttons/back.png" alt="arrow" />
-      </div>
+      {page !== 0 ? (
+        <div onClick={() => pageUpdate(page - 1)}>
+          <img className="back-arrow" src="buttons/back.png" alt="arrow" />
+        </div>
+      ) : (
+        ""
+      )}
       {pages[page]}
-
     </>
   );
 };
