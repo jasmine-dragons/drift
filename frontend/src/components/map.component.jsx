@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
-import ReactMapGL from 'react-map-gl'; 
+import ReactMapGL, { GeolocateControl } from 'react-map-gl'; 
+import { navigator } from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Map = () => {
+const Map = (props) => {
 
     const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.MAPBOX_TOKEN; 
+    const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep"; 
+
+    console.log(navigator);
+    const position = navigator.getPosition();
+    const latitude = position.latitude;
+    const longitude = position.longitude; 
 
     const [viewport, setViewport] = useState({
         width: "100vw",
         height: "100vh",
-        latitude: 37.7577,
-        longitude: -122.4376,
-        zoom: 8
+        latitude: latitude,
+        longitude: longitude,
+        zoom: 1.84
       });
 
     return(
@@ -19,8 +27,15 @@ const Map = () => {
             {...viewport}
             onViewportChange={nextViewport => setViewport(nextViewport)}
             mapboxApiAccessToken={MAPBOX_TOKEN}
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            />
+            mapStyle={style}
+            >
+                <GeolocateControl
+                // trackUserLocation={true}
+                positionOptions={{enableHighAccuracy: true}}
+                showUserLocation={true}
+                showAccuracyCircle={false}
+                />
+            </ReactMapGL>
         </div>
     )
 }
