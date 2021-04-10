@@ -1,1 +1,2 @@
 # hackillinois
+Map which randomly generates a scavenger hunt and randomly selects a friend out of your list of friends to go on a scavenger hunt with. It finds locations on the map with little tasks such as buy boba, go to the top of a hill, or walk around a trail in order to earn a certain number of points. Connects with friends since it makes a very simple way to find activities to do with friends you haven't reached out to. 
