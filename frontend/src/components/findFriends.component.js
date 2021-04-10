@@ -8,7 +8,12 @@ const FindFriends = (props) => {
         alt="find-friends"
         src="/pages/findFriends.png"
       />
-      <h1 className="find-friends-text">find friends</h1>
+      <p className="find-friends-text">find friends</p>
+      <input
+        className="find-friends-input"
+        type="text"
+        placeholder="username or email"
+      />
       <button className="search-button" onClick={props.updatePage}>
         Search
       </button>
