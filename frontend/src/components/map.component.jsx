@@ -4,11 +4,12 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Marker from 'react-map-gl';
 import axios from 'axios'; 
-
+import MarkerItem from './marker.component';
 const Map = () => {
 
     // Tokens and styles
-    const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; 
+    const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.REACT_APP_MAPBOX_TOKEN; 
+    console.log(MAPBOX_TOKEN);
     const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep";
 
     // Set the center location of the map
@@ -66,8 +67,9 @@ const Map = () => {
         lon: -121.15234,
       };
 
-    const result = axios.get("/api/posts");
-    setMarkers(result.data);
+
+    // const result = axios.get("/api/posts");
+    // setMarkers(result.data);
 
     console.log("viewport")
     console.log(viewport); 
@@ -86,12 +88,10 @@ const Map = () => {
                 showUserLocation={true}
                 showAccuracyCircle={false}
                 /> */}
-                <Marker
+                <MarkerItem
                 latitude={drag.lat}
                 longitude={drag.lon}
-                >
-                        <img src={'mapicons/mapmarker.svg'} className="pin" />
-                </Marker>
+                />
             </ReactMapGL>
         </div>
     )

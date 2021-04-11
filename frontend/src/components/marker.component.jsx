@@ -3,11 +3,18 @@ import { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '../common.css'
 
-const MarkerItem = () => {
+const MarkerItem = (props) => {
+
+    const { longitude, latitude } = props; 
+
+    console.log("longitude: " + longitude);
+    console.log("latitude: " + latitude);
     const drag = {
-        lat: 38.6839,
-        lon: -121.15234,
+        lat: props.latitude,
+        lon: props.longitude,
       };
+
+      console.log(drag);
 
     return (
         <div>
