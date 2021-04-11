@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL, { GeolocateControl } from 'react-map-gl'; 
+import ReactMapGL, { GeolocateControl } from 'react-map-gl';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Marker from 'react-map-gl';
-import axios from 'axios'; 
+import axios from 'axios';
 import MarkerItem from './marker.component';
+import { tasks } from './tasks'
+
 const Map = () => {
 
     // Tokens and styles
-    const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.REACT_APP_MAPBOX_TOKEN; 
+    const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.REACT_APP_MAPBOX_TOKEN;
     console.log(MAPBOX_TOKEN);
     const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep";
 
@@ -23,7 +25,7 @@ const Map = () => {
         // Get browser lat and lng for current user
         if (!navigator.geolocation) {
             alert('Geolocation is not supported by your browser');
-        } 
+        }
         else {
             navigator.geolocation.getCurrentPosition((position) => findLocationSuccess(position), (error) => findLocationFail(error));
         }
@@ -71,8 +73,8 @@ const Map = () => {
     // const result = axios.get("/api/posts");
     // setMarkers(result.data);
 
-    console.log("viewport")
-    console.log(viewport); 
+    // console.log("viewport")
+    // console.log(viewport);
 
     return(
         <div>
@@ -97,4 +99,4 @@ const Map = () => {
     )
 }
 
-export default Map; 
+export default Map;
