@@ -5,7 +5,7 @@ import GamePage from "./components/gamePage.component";
 import LandingPage from "./components/landingPage.component";
 import FindFriends from "./components/findFriends.component";
 import EndingPage from "./components/endingPage.component";
-
+import Generate from "./components/generate.component"
 import Login from "./components/login.component";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
     <LandingPage updatePage={nextPage} />,
     <Login updatePage={nextPage} />,
     <FindFriends updatePage={nextPage} />,
+    <Generate updatePage={nextPage} />,
     <GamePage updatePage={nextPage} />,
     <EndingPage updatePage={backPage} />
   ];
@@ -31,7 +32,7 @@ const App = () => {
       {page !== 0 ? (
         <div onClick={() => pageUpdate(page - 1)}>
 
-          
+
           <img className="back-arrow" src="buttons/back.png" alt="arrow" />
 
         </div>

@@ -162,12 +162,26 @@ button {
   position: absolute;
   width: 159px;
   height: 58px;
-  left: 123px;
+  left: 135px;
   top: 449px;
   margin-top: 6%;
   color: white;
   font-size: 28px;
   background: #107e7b;
+  border: transparent;
+  border-radius: 50px;
+}
+
+.next-button {
+  position: absolute;
+  width: 259px;
+  height: 58px;
+  left: 85px;
+  top: 529px;
+  margin-top: 6%;
+  color: black;
+  font-size: 28px;
+  background: #FFC65C;
   border: transparent;
   border-radius: 50px;
 }
@@ -252,7 +266,8 @@ button {
   filter: drop-shadow(.5rem .5rem .5rem #00000066);
   border-radius: 1rem;
   text-align: center;
-  margin: auto; 
+  margin: auto;
+  margin-left: 3.5%;
   order: 1;
   z-index: 1;
   padding-top: 5%;
@@ -307,4 +322,3 @@ button {
 .text {
   flex-grow: 2;
 }
-
