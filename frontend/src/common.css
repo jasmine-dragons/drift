@@ -205,3 +205,94 @@ button {
   object-fit: "contain";
   max-width: 280px;
 }
+
+.game-page {
+  background: #0c3237;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.game-page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-text {
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
+  /* right: 10vw; */
+  width: 90vw;
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffc65c;
+  background-color: #0C3237;
+  filter: drop-shadow(.5rem .5rem .5rem #00000066);
+  border-radius: 1rem;
+  text-align: center;
+  margin: auto; 
+  order: 1;
+  z-index: 1;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.map {
+  position: absolute;
+  bottom: 10vh;
+  height: 90vh;
+  border-radius: 1rem;
+  width: 100vw;
+}
+
+.remaining {
+  position: absolute;
+  top: 25vh;
+  width: 100vw;
+  height: 10vh;
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-shadow: 0 0 10rem #000000;
+  z-index: 10;
+}
+
+.next-step {
+  height: 10vh;
+  top: 90vh;
+  background-color: #89C1D2;
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #0C3237;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  position: absolute;
+  z-index: 11;
+}
+
+.arrow {
+  height: 70%;
+  margin-right: 1rem;
+}
+
+.text {
+  flex-grow: 2;
+}

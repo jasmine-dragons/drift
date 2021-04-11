@@ -16,8 +16,8 @@ export const tasks = [
   },
   {
     task: "Take a picture in front of the Palladio Clock Tower",
-    longitude: 38.65024966990729,
-    latitude: -121.11881051204125,
+    longitude: -121.11881051204125,
+    latitude: 38.65024966990729,
   },
   {
     task: "Pick outfits for each other at the thriftstore",
@@ -26,8 +26,8 @@ export const tasks = [
   },
   {
     task: "Have a taco eating contest at Salsa's",
-    longitude: 38.652040,
-    latitude: -121.166040,
+    longitude: -121.166040,
+    latitude: 38.652040,
   },
   {
     task: "Climb up the highest hill you can find",
@@ -41,7 +41,8 @@ export const tasks = [
   },
   {
     task: "Make frozen yogurt cups for each other at Pinkberry",
-    longitude: 38.65144154328992,
-    latitude: -121.11896471282785,
+    longitude: -121.11896471282785,
+    latitude: 38.65144154328992,
   },
 ]
+
