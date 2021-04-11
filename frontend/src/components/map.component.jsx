@@ -10,8 +10,7 @@ import { tasks } from './tasks'
 const Map = (props) => {
 
     // Tokens and styles
-    const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.REACT_APP_MAPBOX_TOKEN;
-    console.log(MAPBOX_TOKEN);
+    const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
     const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep";
 
     // Set the center location of the map
@@ -20,7 +19,7 @@ const Map = (props) => {
         lng: 0,
     })
 
-    // Get the users current location before rendering map. Not currently used.
+    // Get the users current location before rendering map. Not currently used or working.
     const locate = () => {
         // Get browser lat and lng for current user
         if (!navigator.geolocation) {
@@ -62,12 +61,13 @@ const Map = (props) => {
     });
 
 
-    // Get the marker locations to render on the map. TODO: render markers one by one for each step
+    // Get the first marker on the map. 
     const [marker, setMarker] = useState({
         lat: tasks[0].latitude,
         lng: tasks[0].longitude,
     });
 
+    // Render the markers one by one
     useEffect(()=> {
         setMarker({
             lat: tasks[props.index].latitude,
@@ -75,15 +75,8 @@ const Map = (props) => {
         })
     }, [props.index])
 
+    // Check if the marker has a location
     const location = marker.lat !== null && marker.lng !== null;
-
-
-
-    // const result = axios.get("/api/posts");
-    // setMarkers(result.data);
-
-    // console.log("viewport")
-    // console.log(viewport);
 
     return(
         <div>
@@ -93,12 +86,6 @@ const Map = (props) => {
             mapboxApiAccessToken={MAPBOX_TOKEN}
             mapStyle={style}
             >
-                {/* <GeolocateControl
-                // trackUserLocation={true}
-                positionOptions={{enableHighAccuracy: true}}
-                showUserLocation={true}
-                showAccuracyCircle={false}
-                /> */}
                 {location ? <MarkerItem
                 latitude={marker.lat}
                 longitude={marker.lng}

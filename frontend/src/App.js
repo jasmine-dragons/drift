@@ -4,6 +4,7 @@ import "./App.css";
 import GamePage from "./components/gamePage.component";
 import LandingPage from "./components/landingPage.component";
 import FindFriends from "./components/findFriends.component";
+import EndingPage from "./components/endingPage.component";
 
 import Login from "./components/login.component";
 
@@ -17,6 +18,7 @@ const App = () => {
     <Login updatePage={nextPage} />,
     <FindFriends updatePage={nextPage} />,
     <GamePage updatePage={nextPage} />,
+    <EndingPage updatePage={nextPage} />
   ];
   return (
     //to add a new page change the indexes appropriatly and take the updatePage prop.

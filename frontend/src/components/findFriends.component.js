@@ -1,10 +1,12 @@
 import React from "react";
 import "../common.css";
+
+
 const FindFriends = (props) => {
   return (
     <div className="find-friends-wrapper">
       <img
-        className="/find-friends-background"
+        className="find-friends-background"
         alt="find-friends"
         src="/pages/findFriends.png"
       />
