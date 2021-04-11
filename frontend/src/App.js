@@ -13,12 +13,15 @@ const App = () => {
   const nextPage = () => {
     pageUpdate(page + 1);
   };
+  const backPage = () => {
+    pageUpdate(2);
+  };
   const pages = [
     <LandingPage updatePage={nextPage} />,
     <Login updatePage={nextPage} />,
     <FindFriends updatePage={nextPage} />,
     <GamePage updatePage={nextPage} />,
-    <EndingPage updatePage={nextPage} />
+    <EndingPage updatePage={backPage} />
   ];
   return (
     //to add a new page change the indexes appropriatly and take the updatePage prop.

@@ -4,17 +4,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '../common.css'
 
 const MarkerItem = (props) => {
-
-    const { longitude, latitude } = props; 
-
-    console.log("longitude: " + longitude);
-    console.log("latitude: " + latitude);
     const drag = {
         lat: props.latitude,
         lon: props.longitude,
       };
-
-      console.log(drag);
 
     return (
         <div>

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const EndingPage = () => {
+const EndingPage = (props) => {
     return(
         <div>
-            <img src='/pages/4.png'/>
+            <img 
+            className="find-friends-background" 
+            src='/pages/4.png' 
+            onClick={props.updatePage}
+            />
         </div>
     )
 }
