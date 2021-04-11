@@ -62,36 +62,32 @@ const Map = (props) => {
 
     // Get the first marker on the map. 
     const [marker, setMarker] = useState({
-        lat: tasks[0].latitude,
-        lng: tasks[0].longitude,
+        lat: tasks[props.index].latitude,
+        lng: tasks[props.index].longitude,
     });
 
     // Render the markers one by one
-    useEffect(()=> {
-        // if(props.index !== 0){
-            
-        // }
-
-        setMarker({
-            lat: tasks[props.index].latitude,
-            lng: tasks[props.index].longitude, 
-        })
-        console.log("marker");
-        console.log(marker);
-
-        moveViewport(marker);  
-    }, [props.index])
-
+    useEffect(() => {
+        const update = async () => {
+            await setMarker({
+                lat: tasks[props.index].latitude,
+                lng: tasks[props.index].longitude, 
+            })
+            moveViewport(tasks[props.index]); 
+        };
+        update();
+         
+    }, [props.index])   
 
     // Move viewport to the marker
     const moveViewport = (marker) => {
         let zoom = 12; 
         let lat = viewport.latitude;
         let lng = viewport.longitude;
-        if(marker.lat !== null && marker.lng !== null){
+        if(marker.latitude !== null && marker.longitude !== null){
             zoom = 16;
-            lat = marker.lat;
-            lng = marker.lng;
+            lat = marker.latitude;
+            lng = marker.longitude;
         }
 
         setViewport({
@@ -105,7 +101,6 @@ const Map = (props) => {
         });
       };
 
-    console.log(viewport);
 
     // Check if the marker has a location
     let location = marker.lat !== null && marker.lng !== null;
