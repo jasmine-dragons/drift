@@ -9,7 +9,7 @@ const GamePage = (props) => {
     const [index, setIndex] = useState(0); 
 
     const handleNext = () => {
-        if(index != tasks.length){
+        if(index != tasks.length-1){
             setIndex(index + 1);
         }
         else{
