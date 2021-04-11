@@ -7,14 +7,17 @@ import axios from 'axios';
 
 const Map = () => {
 
+    // Tokens and styles
     const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; 
     const style = "mapbox://styles/nishantbalaji/cknbaw85i01qt17nyz50by9ep";
 
+    // Set the center location of the map
     const [ center, setCenter ] = useState({
         lat: 0,
         lng: 0,
     })
 
+    // Get the users current location before rendering map. Not currently used.
     const locate = () => {
         // Get browser lat and lng for current user
         if (!navigator.geolocation) {
@@ -54,6 +57,8 @@ const Map = () => {
         zoom: 11.1956
     });
 
+
+    // Get the marker locations to render on the map. TODO: render markers one by one for each step
     const [markers, setMarkers] = useState(null);
 
     const drag = {
