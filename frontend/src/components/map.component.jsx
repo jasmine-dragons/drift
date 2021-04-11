@@ -7,7 +7,7 @@ import axios from 'axios';
 import MarkerItem from './marker.component';
 import { tasks } from './tasks'
 
-const Map = () => {
+const Map = (props) => {
 
     // Tokens and styles
     const MAPBOX_TOKEN = 'pk.eyJ1IjoibmlzaGFudGJhbGFqaSIsImEiOiJja2xkOGl3cjcxc21yMndtdmxtZWpxeGRuIn0.isOPq2BjpvuzwjZMXW1yWA'; //process.env.REACT_APP_MAPBOX_TOKEN;
@@ -63,12 +63,20 @@ const Map = () => {
 
 
     // Get the marker locations to render on the map. TODO: render markers one by one for each step
-    const [markers, setMarkers] = useState(null);
+    const [marker, setMarker] = useState({
+        lat: tasks[0].latitude,
+        lng: tasks[0].longitude,
+    });
 
-    const drag = {
-        lat: 38.6839,
-        lon: -121.15234,
-      };
+    useEffect(()=> {
+        setMarker({
+            lat: tasks[props.index].latitude,
+            lng: tasks[props.index].longitude, 
+        })
+    }, [props.index])
+
+    const location = marker.lat !== null && marker.lng !== null;
+
 
 
     // const result = axios.get("/api/posts");
@@ -91,10 +99,13 @@ const Map = () => {
                 showUserLocation={true}
                 showAccuracyCircle={false}
                 /> */}
-                <MarkerItem
-                latitude={drag.lat}
-                longitude={drag.lon}
-                />
+                {location ? <MarkerItem
+                latitude={marker.lat}
+                longitude={marker.lng}
+                /> 
+                : null
+                }
+                
             </ReactMapGL>
         </div>
     )

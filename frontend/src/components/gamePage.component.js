@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Map from './map.component'
 import '../common.css';
+import { tasks } from './tasks.js';
 
 
 const GamePage = (props) => {
 
-    const handleNext = () => {
+    const [index, setIndex] = useState(0); 
 
+    const handleNext = () => {
+        if(index != tasks.length){
+            setIndex(index + 1);
+        }
+        else{
+            props.updatePage();
+        }
     }
 
 
@@ -14,11 +22,11 @@ const GamePage = (props) => {
     return(
         <div className="game-page">
             <div className="game-page-wrapper">
-                <div className="challenge-text">Take a picture by Altgeld Hall</div>
-                <div className="map"><Map/></div>
+                <div className="challenge-text">{tasks[index].task}</div>
+                <div className="map"><Map index={index}/></div>
                 <div className="challenge"></div>
-                <div className="remaining">7 stages left</div>
-                <div className="next-step" onClick={props.updatePage}>
+                <div className="remaining">{tasks.length-index} tasks left</div>
+                <div className="next-step" onClick={() => handleNext()}>
                     <div className="text">
                         <div>Reveal Next</div> 
                         <div>Stage</div>
