@@ -163,3 +163,23 @@ button {
   letter-spacing: -0.05em;
   color: #ffc65c;
 }
+
+.pin {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  height: 5vh;
+  width: 5vw;
+}
+
+.pin-style {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  object-fit: "contain";
+  max-width: 280px;
+}

@@ -2,35 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { GeolocateControl } from 'react-map-gl'; 
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Marker from './marker.component';
-
-// const getLocation = async () => {
-//     if ("geolocation" in navigator) {
-//         console.log("Available");
-//       } else {
-//         console.log("Not Available");
-//       }
-    
-//     const position = {
-//         latitude: 0,
-//         longitude: 0,
-//     }
-    
-//     await navigator.geolocation.getCurrentPosition((userPosition) => {
-//         // position.latitude = userPosition.coords.latitude;
-//         // position.longitude = userPosition.coords.longitude;
-//         position['latitude'] = 6;
-//         position['longitude'] = 9;
-//         console.log('inside navigator');
-//         console.log(position);
-//     });
-
-
-//     console.log(position.latitude);
-//     console.log(position.longitude);
-//       return position;
-// }
-
+import Marker from 'react-map-gl';
+import axios from 'axios'; 
 
 const Map = () => {
 
@@ -67,7 +40,7 @@ const Map = () => {
     useEffect(
         () => {
             const name = async() => {
-                await locate()
+                await locate();
             }
             name();
         }
@@ -76,10 +49,20 @@ const Map = () => {
     const [viewport, setViewport] = useState({
         width: "100vw",
         height: "100vh",
-        latitude: center.lat,
-        longitude: center.lng,
-        zoom: 1.84
+        latitude: 38.6839, //center.lat,
+        longitude: -121.15234, //center.lng,
+        zoom: 11.1956
     });
+
+    const [markers, setMarkers] = useState(null);
+
+    const drag = {
+        lat: 38.6839,
+        lon: -121.15234,
+      };
+
+    const result = axios.get("/api/posts");
+    setMarkers(result.data);
 
     console.log("viewport")
     console.log(viewport); 
@@ -91,7 +74,6 @@ const Map = () => {
             onViewportChange={setViewport}
             mapboxApiAccessToken={MAPBOX_TOKEN}
             mapStyle={style}
-            
             >
                 {/* <GeolocateControl
                 // trackUserLocation={true}
@@ -99,6 +81,12 @@ const Map = () => {
                 showUserLocation={true}
                 showAccuracyCircle={false}
                 /> */}
+                <Marker
+                latitude={drag.lat}
+                longitude={drag.lon}
+                >
+                        <img src={'mapicons/mapmarker.svg'} className="pin" />
+                </Marker>
             </ReactMapGL>
         </div>
     )
