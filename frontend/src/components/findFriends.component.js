@@ -16,8 +16,11 @@ const FindFriends = (props) => {
         type="text"
         placeholder="username or email"
       />
-      <button className="search-button" onClick={props.updatePage}>
-        Search
+      <button className="search-button">
+        search
+      </button>
+      <button className="next-button" onClick={props.updatePage}>
+        next
       </button>
     </div>
   );
