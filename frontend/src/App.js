@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./App.css";
-import Map from "./components/map.component";
+import GamePage from "./components/gamePage.component";
 import LandingPage from "./components/landingPage.component";
 import FindFriends from "./components/findFriends.component";
 
@@ -16,7 +16,7 @@ const App = () => {
     <LandingPage updatePage={nextPage} />,
     <Login updatePage={nextPage} />,
     <FindFriends updatePage={nextPage} />,
-    <Map updatePage={nextPage} />,
+    <GamePage updatePage={nextPage} />,
   ];
   return (
     //to add a new page change the indexes appropriatly and take the updatePage prop.
