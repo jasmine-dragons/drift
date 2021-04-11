@@ -218,11 +218,27 @@ button {
   flex-direction: column;
 }
 
-.challenge-text {
+
+.map {
+  position: absolute;
+  bottom: 10vh;
+  height: 90vh;
+  border-radius: 1rem;
+  width: 100vw;
+}
+
+.challenge-wrapper {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 10vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.challenge-text {
+  order: 1;
   left: 5vw;
-  /* right: 10vw; */
   width: 90vw;
   font-family: Open Sans;
   font-style: italic;
@@ -241,18 +257,13 @@ button {
   z-index: 1;
   padding-top: 5%;
   padding-bottom: 5%;
-}
-
-.map {
-  position: absolute;
-  bottom: 10vh;
-  height: 90vh;
-  border-radius: 1rem;
-  width: 100vw;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .remaining {
-  position: absolute;
+  order: 2;
+  position: relative;
   top: 25vh;
   width: 100vw;
   height: 10vh;
@@ -296,3 +307,4 @@ button {
 .text {
   flex-grow: 2;
 }
+

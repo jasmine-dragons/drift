@@ -22,10 +22,11 @@ const GamePage = (props) => {
     return(
         <div className="game-page">
             <div className="game-page-wrapper">
-                <div className="challenge-text">{tasks[index].task}</div>
                 <div className="map"><Map index={index}/></div>
-                <div className="challenge"></div>
-                <div className="remaining">{tasks.length-index} tasks left</div>
+                <div className="challenge-wrapper">
+                    <div className="challenge-text">{tasks[index].task}</div>  
+                    <div className="remaining">{tasks.length-index} tasks left</div>
+                </div>
                 <div className="next-step" onClick={() => handleNext()}>
                     <div className="text">
                         <div>Reveal Next</div> 
