@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL, { GeolocateControl } from 'react-map-gl';
-import mapboxgl from 'mapbox-gl';
+import ReactMapGL, { FlyToInterpolator } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Marker from 'react-map-gl';
 import axios from 'axios';
 import MarkerItem from './marker.component';
 import { tasks } from './tasks'
+import * as d3 from 'd3';
 
 const Map = (props) => {
 
@@ -17,7 +16,7 @@ const Map = (props) => {
     const [ center, setCenter ] = useState({
         lat: 0,
         lng: 0,
-    })
+    }) 
 
     // Get the users current location before rendering map. Not currently used or working.
     const locate = () => {
@@ -69,14 +68,47 @@ const Map = (props) => {
 
     // Render the markers one by one
     useEffect(()=> {
+        // if(props.index !== 0){
+            
+        // }
+
         setMarker({
             lat: tasks[props.index].latitude,
             lng: tasks[props.index].longitude, 
         })
+        console.log("marker");
+        console.log(marker);
+
+        moveViewport(marker);  
     }, [props.index])
 
+
+    // Move viewport to the marker
+    const moveViewport = (marker) => {
+        let zoom = 12; 
+        let lat = viewport.latitude;
+        let lng = viewport.longitude;
+        if(marker.lat !== null && marker.lng !== null){
+            zoom = 16;
+            lat = marker.lat;
+            lng = marker.lng;
+        }
+
+        setViewport({
+          ...viewport,
+          longitude: lng,
+          latitude: lat,
+          zoom: zoom,
+          transitionDuration: 2000,
+          transitionInterpolator: new FlyToInterpolator(),
+          transitionEasing: d3.easeCubicInOut,
+        });
+      };
+
+    console.log(viewport);
+
     // Check if the marker has a location
-    const location = marker.lat !== null && marker.lng !== null;
+    let location = marker.lat !== null && marker.lng !== null;
 
     return(
         <div>
