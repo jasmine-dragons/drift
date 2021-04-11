@@ -20,7 +20,7 @@ export const tasks = [
     latitude: 38.65024966990729,
   },
   {
-    task: "Pick outfits for each other at the thriftstore",
+    task: "Pick outfits for each other at a thriftstore",
     longitude: null,
     latitude: null,
   },
@@ -45,4 +45,3 @@ export const tasks = [
     latitude: 38.65144154328992,
   },
 ]
-
